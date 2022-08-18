@@ -6,11 +6,12 @@
         </h2>
     </x-slot>
 
-    {{$search}}
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
         <!-- Table -->
+
+        {{ $search }}
 
         <x-table>
 
@@ -18,65 +19,49 @@
                 <input type="text" wire:model="search">
             </div>
 
-            <table class="table-auto w-full">
-                <thead class="text-xs font-semibold uppercase text-gray-400 bg-gray-50">
-                    <tr>
-                        <th class="p-2 whitespace-nowrap">
-                            <div class="font-semibold text-left">ID</div>
-                        </th>
-                        <th class="p-2 whitespace-nowrap">
-                            <div class="font-semibold text-left">Nombre</div>
-                        </th>
-                        <th class="p-2 whitespace-nowrap">
-                            <div class="font-semibold text-left">Apellido</div>
-                        </th>
-                        <th class="p-2 whitespace-nowrap">
-                            <div class="font-semibold text-center">Numero Doc</div>
-                        </th>
+            <table class="min-w-max w-full table-auto">
+                <thead>
+                    <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+                        <th class="py-3 px-6 text-left">ID</th>
+                        <th class="py-3 px-6 text-left">Nombres</th>
+                        <th class="py-3 px-6 text-left">Apellidos</th>
+                        <th class="py-3 px-6 text-left">Numero Doc</th>
                     </tr>
                 </thead>
-                <tbody class="text-sm divide-y divide-gray-100">
-                    
-                    @foreach ($beneficiarios as $beneficiario)
-                      
-                    <tr>
-                        <td class="p-2">
-                            <div class="flex items-center">
-                                <div class="font-medium text-gray-800">
-                                    {{$beneficiario->id_beneficiarios}}
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <div class="flex items-center">
-                                <div class="font-medium text-gray-800">
-                                    {{$beneficiario->nombre_benef}}
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <div class="flex items-center">
-                                <div class="font-medium text-gray-800">
-                                    {{$beneficiario->apellido_benef}}
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <div class="flex items-center">
-                                <div class="font-medium text-gray-800">
-                                    {{$beneficiario->numero_doc}}
-                                </div>
-                            </div>
-                        </td>
-                        
-                    </tr>
 
+                <tbody class="text-gray-600 text-sm font-light">
+
+                    @foreach ($beneficiarios as $beneficiario)
+                        <tr class="border-b border-gray-200 hover:bg-gray-100">
+
+                            <td class="py-3 px-6 text-left">
+                                <div class="flex items-center">
+                                    {{ $beneficiario->id_beneficiarios }}
+                                </div>
+                            </td>
+                            <td class="py-3 px-6 text-left">
+                                <div class="flex items-center">
+                                    {{ $beneficiario->nombre_benef }}
+                                </div>
+                            </td>
+                            <td class="py-3 px-6 text-left">
+                                <div class="flex items-center">
+                                    {{ $beneficiario->apellido_benef }}
+                                </div>
+                            </td>
+                            <td class="py-3 px-6 text-left">
+                                <div class="flex items-center">
+                                    {{ $beneficiario->numero_doc }}
+                                </div>
+                            </td>
+
+                        </tr>
                     @endforeach
-                
                 </tbody>
             </table>
 
         </x-table>
 
     </div>
+
 </div>
