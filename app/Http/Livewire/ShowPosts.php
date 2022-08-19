@@ -10,7 +10,7 @@ use Livewire\Component;
 class ShowPosts extends Component
 {
     
-    public $search="Busqueda";
+    public $search;
 
     
     public function render()
@@ -18,7 +18,10 @@ class ShowPosts extends Component
         ini_set('max_execution_time', 600);
         ini_set('memory_limit', '-1');
 
-        $beneficiarios = Beneficiario::offset(0)->limit(10)->get();
+        $beneficiarios = Beneficiario::where('apellido_benef','like','%'.$this->search.'%')
+                    ->orwhere('nombre_benef','like','%'.$this->search.'%')
+                    ->orderby('id_beneficiarios')
+                    ->offset(0)->limit(10)->get();
 
         return view('livewire.show-posts', compact('beneficiarios'));
     }
