@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\ShowPosts;
+use App\Http\Livewire\MostrarBeneficiarios;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,5 +19,5 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
-    Route::get('/dashboard', ShowPosts::class)->name('dashboard');
+    Route::get('/dashboard', MostrarBeneficiarios::class)->name('dashboard');
 });
