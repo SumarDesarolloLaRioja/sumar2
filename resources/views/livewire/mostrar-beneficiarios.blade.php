@@ -7,7 +7,7 @@
     </x-slot>
 
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
         <!-- Table -->
 
@@ -21,7 +21,7 @@
 
             @if ($beneficiarios->count())
 
-                <table class="min-w-max w-full table-auto">
+                <table class="min-w-min w-full table-auto">
                     <thead>
                         <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                             <th class="cursor-pointer py-3 px-6 text-left"
