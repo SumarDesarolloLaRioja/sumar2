@@ -7,15 +7,13 @@
     </x-slot>
 
 
-    <div class="mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
         <!-- Table -->
 
         <x-table>
 
-            <div class="px-6 py-4 flex items-center">
-               <x-jet-input class="flex-1" placeholder="Escriba lo que desea buscar" type="text" wire:model="search" /> 
-               
+            <div class="px-6 py-4 flex items-center">           
+                <x-jet-input class="flex-1 mr-3" placeholder="Escriba lo que desea buscar" type="text" wire:model="search" />          
                @livewire('crear-beneficiario')
             </div>
 

@@ -11,7 +11,7 @@ class MostrarBeneficiarios extends Component
 {
     
     public $sort = 'id_beneficiarios';  // ordena por este campo por defecto
-    public $direction = 'asc';  // ordena de manera asc por defecto
+    public $direction = 'desc';  // ordena de manera asc por defecto
     public $search;  // variable para realizar la busqueda
 
     public function render()
